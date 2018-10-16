@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using QuizCreator.Models;
 
 namespace QuizCreator.Models
 {
@@ -11,6 +12,10 @@ namespace QuizCreator.Models
 
         public string Name { get; set; }
 
+        public OwnerUser OwnerUser { get; set; }
+
+        public int OwnerUserId { get; set; }
+        
         public string QuestionText { get; set; }
 
         public string AnswerOne { get; set; }
