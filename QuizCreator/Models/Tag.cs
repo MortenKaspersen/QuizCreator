@@ -11,12 +11,6 @@ namespace QuizCreator.Models
 
         public string Name { get; set; }
 
-        public string Anatomi { get; set; }
-
-        public string Genetik { get; set; }
-
-        public string Fysiologi { get; set; }
-
         
     }
 }

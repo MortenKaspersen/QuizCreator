@@ -205,6 +205,30 @@
     <Compile Include="Migrations\201810161831036_InitialMigrationAddingQuestionTagOwnerUserToDB.Designer.cs">
       <DependentUpon>201810161831036_InitialMigrationAddingQuestionTagOwnerUserToDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810161953410_PopulateTags.cs" />
+    <Compile Include="Migrations\201810161953410_PopulateTags.Designer.cs">
+      <DependentUpon>201810161953410_PopulateTags.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810162002037_PopulateTags1.cs" />
+    <Compile Include="Migrations\201810162002037_PopulateTags1.Designer.cs">
+      <DependentUpon>201810162002037_PopulateTags1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810162028104_PopulateTags2.cs" />
+    <Compile Include="Migrations\201810162028104_PopulateTags2.Designer.cs">
+      <DependentUpon>201810162028104_PopulateTags2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810162029430_PopulateTagsTwo.cs" />
+    <Compile Include="Migrations\201810162029430_PopulateTagsTwo.Designer.cs">
+      <DependentUpon>201810162029430_PopulateTagsTwo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810162033565_RemoveColumnsFromTags.cs" />
+    <Compile Include="Migrations\201810162033565_RemoveColumnsFromTags.Designer.cs">
+      <DependentUpon>201810162033565_RemoveColumnsFromTags.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810162036081_SeedingTags.cs" />
+    <Compile Include="Migrations\201810162036081_SeedingTags.Designer.cs">
+      <DependentUpon>201810162036081_SeedingTags.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -297,6 +321,24 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201810161831036_InitialMigrationAddingQuestionTagOwnerUserToDB.resx">
       <DependentUpon>201810161831036_InitialMigrationAddingQuestionTagOwnerUserToDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810161953410_PopulateTags.resx">
+      <DependentUpon>201810161953410_PopulateTags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810162002037_PopulateTags1.resx">
+      <DependentUpon>201810162002037_PopulateTags1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810162028104_PopulateTags2.resx">
+      <DependentUpon>201810162028104_PopulateTags2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810162029430_PopulateTagsTwo.resx">
+      <DependentUpon>201810162029430_PopulateTagsTwo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810162033565_RemoveColumnsFromTags.resx">
+      <DependentUpon>201810162033565_RemoveColumnsFromTags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810162036081_SeedingTags.resx">
+      <DependentUpon>201810162036081_SeedingTags.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
