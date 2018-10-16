@@ -1,0 +1,17 @@
+﻿@model QuizCreator.ViewModels.RandomQuestionViewModel
+@{
+    ViewBag.Title = "Random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Question.Name</h2>
+
+@{
+    <ul>
+        @foreach (var ownerUser in Model.OwnerUsers)
+        {
+            <li>@ownerUser.Name</li>
+        }
+    </ul>
+}
+
