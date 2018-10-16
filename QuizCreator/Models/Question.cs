@@ -24,7 +24,7 @@ namespace QuizCreator.Models
 
         public string AnswerThree { get; set; }
 
-        public int CorrectAnswer { get; set; }
+        public string CorrectAnswer { get; set; }
 
         public Tag Tag { get; set; }
 
@@ -33,7 +33,7 @@ namespace QuizCreator.Models
         public string ExplanationText { get; set; }
         
         public DateTime CreatedAt { get; set; }
-
+        
         
     }
 }
