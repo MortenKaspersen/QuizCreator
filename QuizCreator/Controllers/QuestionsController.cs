@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data.Entity;
 using System.Web.Mvc;
 using QuizCreator.Models;
 using QuizCreator.ViewModels;
@@ -10,23 +11,36 @@ namespace QuizCreator.Controllers
 {
     public class QuestionsController : Controller
     {
+        private ApplicationDbContext _context;
+
+        public QuestionsController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool Disposing)
+        {
+            _context.Dispose();
+        }
+
         public ViewResult Index()
         {
-            var questions = GetQuestions();
+            var question = _context.Questions.ToList();
 
-            return View(questions);
+            return View(question);
         }
 
-        public IEnumerable<Question> GetQuestions()
+        public ActionResult Details(int id)
         {
-            return new List<Question>
-        {
-        new Question {Id = 1, Name = "Who is Json?"},
-        new Question {Id = 2, Name = "Are you Linus?"}
-        };
+            var question = _context.Questions.Include(c => c.Tag).SingleOrDefault(c => c.Id == id);
+
+            if (question == null)
+                return HttpNotFound();
+
+            return View(question);
         }
 
-        // GET: Questions
+        // GET: Questions/Random
         public ActionResult Random()
         {
             var question = new Question()
@@ -34,10 +48,10 @@ namespace QuizCreator.Controllers
                 Name = "What is Json?"
             };
 
-            var ownerUser = new List<OwnerUser>
+            var ownerUser = new List<User>
         {
-        new OwnerUser() { Name = "User 1"},
-        new OwnerUser() { Name = "User 2"}
+        new User() { Name = "User 1"},
+        new User() { Name = "User 2"}
         };
 
             var viewModel = new RandomQuestionViewModel

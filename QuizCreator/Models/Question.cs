@@ -12,9 +12,9 @@ namespace QuizCreator.Models
 
         public string Name { get; set; }
 
-        public OwnerUser OwnerUser { get; set; }
+        public User User { get; set; }
 
-        public int OwnerUserId { get; set; }
+        public int UserId { get; set; }
         
         public string QuestionText { get; set; }
 

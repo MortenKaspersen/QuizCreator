@@ -9,14 +9,28 @@
     <thead>
         <tr>
             <th>Question</th>
+            <th>Question Text</th>
+            <th>Answer One</th>
+            <th>Answer two</th>
+            <th>Answer three</th>
+            <th>Correct answer</th>
+            <th>Explanation</th>
+            <th>Created at</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var question in Model)
         {
-            <tr>
-                <td>@question.Name</td>
-            </tr>
+        <tr>
+            <td>@Html.ActionLink(question.Name, "Details", "Questions", new { id = question.Id }, null)</td>
+            <td>@question.QuestionText</td>
+            <td>@question.AnswerOne</td>
+            <td>@question.AnswerTwo</td>
+            <td>@question.AnswerThree</td>
+            <td>@question.CorrectAnswer</td>
+            <td>@question.ExplanationText</td>
+            <td>@question.CreatedAt.ToLongDateString()</td>
+        </tr>
         }
     </tbody>
 </table>

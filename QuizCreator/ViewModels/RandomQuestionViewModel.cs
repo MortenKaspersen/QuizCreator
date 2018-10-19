@@ -10,7 +10,7 @@ namespace QuizCreator.ViewModels
     {
         public Question Question { get; set; }
 
-        public List<OwnerUser> OwnerUsers { get; set; }
+        public List<User> OwnerUsers { get; set; }
 
     }
 }
