@@ -1,8 +1,72 @@
-﻿
+﻿@model QuizCreator.ViewModels.NewQuestionViewModel
+
 @{
     ViewBag.Title = "New";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>New Question</h2>
+<h2>New question</h2>
+
+@using (Html.BeginForm("Create", "Questions"))
+{
+    @Html.ValidationSummary(true, "Please fix the following errors.")
+<div class="form-group">
+        @Html.LabelFor(m => m.Question.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Name)
+</div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Question.QuestionText)
+        @Html.TextBoxFor(m => m.QuestionText, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.QuestionText)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Question.AnswerOne)
+        @Html.TextBoxFor(m => m.AnswerOne, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.AnswerOne)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Question.AnswerTwo)
+        @Html.TextBoxFor(m => m.AnswerTwo, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.AnswerTwo)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Question.AnswerThree)
+        @Html.TextBoxFor(m => m.AnswerThree, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.AnswerThree)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Question.CorrectAnswer)
+        @Html.TextBoxFor(m => m.CorrectAnswer, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.CorrectAnswer)
+    </div>
+    @*<div class="form-group">
+        @Html.LabelFor(m => m.Question.TagId)
+        @Html.DropDownListFor(m => m.Question.TagId, new SelectList(Model.Tags, "Id", "Name"), "Select Question Tag", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Question.TagId)
+    </div>*@
+    <div class="form-group">
+        @Html.LabelFor(m => m.Question.ExplanationText)
+        @Html.TextBoxFor(m => m.ExplanationText, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.ExplanationText)
+    </div>
+    @*<div class="form-group">
+        @Html.LabelFor(m => m.Question.CreatedAt)
+        @Html.TextBoxFor(m => m.CreatedAt, "{0:d MMM yyyy}", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.CreatedAt)
+    </div>*@
+    @*<div class="form-group">
+        @Html.LabelFor(m => m.Question.UserId)
+        @Html.DropDownListFor(m => m.Question.UserId, new SelectList(Model.Users, "Id", "Name"), "Select user", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Question.UserId)
+    </div>*@
+
+    @Html.HiddenFor(m => m.Id)
+    @*@Html.AntiForgeryToken()*@
+    <button type="submit" class="btn btn-primary">Save</button>
+}
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}
 

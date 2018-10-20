@@ -7,10 +7,13 @@ using QuizCreator.Models;
 
 namespace QuizCreator.ViewModels
 {
-    public class QuestionFormViewModel
+    public class NewQuestionViewModel
     {
         public IEnumerable<Tag> Tags { get; set; }
 
+        public Question Question { get; set; }
+
+        [Display(Name = "User")]
         public IEnumerable<User> Users { get; set; }
 
         public int Id { get; set; }
@@ -35,19 +38,19 @@ namespace QuizCreator.ViewModels
 
         public string ExplanationText { get; set; }
 
-        public DateTime CreatedAt { get; set; }
+        //public DateTime? CreatedAt { get; set; }
 
-        public string title
+        public string Title
         {
             get { return Id != 0 ? "Edit Question" : "New Question"; }
         }
 
-        public QuestionFormViewModel()
+        public NewQuestionViewModel()
         {
             Id = 0;
         }
 
-        public QuestionFormViewModel(Question question)
+        public NewQuestionViewModel(Question question)
         {
             Id = question.Id;
             Name = question.Name;
@@ -56,10 +59,10 @@ namespace QuizCreator.ViewModels
             AnswerTwo = question.AnswerTwo;
             AnswerThree = question.AnswerThree;
             CorrectAnswer = question.CorrectAnswer;
-            TagId = question.TagId;
+            //TagId = question.TagId;
             ExplanationText = question.ExplanationText;
-            CreatedAt = question.CreatedAt;
-            UserId = question.UserId;
+            //CreatedAt = question.CreatedAt;
+            //UserId = question.UserId;
         }
     }
 }

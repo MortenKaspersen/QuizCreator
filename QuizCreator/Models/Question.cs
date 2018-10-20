@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using QuizCreator.Models;
@@ -12,9 +13,10 @@ namespace QuizCreator.Models
 
         public string Name { get; set; }
 
-        public User User { get; set; }
+        //public User User { get; set; }
 
-        public int UserId { get; set; }
+        //[Display(Name = "User")]
+        //public int UserId { get; set; }
         
         public string QuestionText { get; set; }
 
@@ -26,13 +28,14 @@ namespace QuizCreator.Models
 
         public string CorrectAnswer { get; set; }
 
-        public Tag Tag { get; set; }
+        //public Tag Tag { get; set; }
 
-        public int TagId { get; set; }
+        //[Display(Name = "Question Tag")]
+        //public int TagId { get; set; }
         
         public string ExplanationText { get; set; }
         
-        public DateTime CreatedAt { get; set; }
+        //public DateTime CreatedAt { get; set; }
         
         
     }
