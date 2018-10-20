@@ -23,6 +23,11 @@ namespace QuizCreator.Controllers
             _context.Dispose();
         }
 
+        public ActionResult New()
+        {
+            return View();
+        }
+
         public ViewResult Index()
         {
             var question = _context.Questions.ToList();
